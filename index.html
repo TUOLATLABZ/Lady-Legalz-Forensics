@@ -1,250 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lady Legalz Digital Forensics AI 2026 - TUOLAT LABZ Quantum Hub</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            color: #e0e0ff;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.6);
-            border-bottom: 2px solid #00ffff;
-            width: 100%;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-        }
-        h1 {
-            font-size: 3em;
-            text-shadow: 0 0 10px #00ffff;
-            margin: 0;
-        }
-        h2 {
-            color: #00ffff;
-            text-shadow: 0 0 5px #00ffff;
-        }
-        .container {
-            max-width: 900px;
-            padding: 20px;
-            background: rgba(20, 20, 40, 0.7);
-            border-radius: 15px;
-            margin: 20px;
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-        }
-        section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 10px;
-            border: 1px solid #00ffff;
-        }
-        input[type="file"], input[type="text"], button {
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: none;
-            width: 100%;
-            background: #1e1e3f;
-            color: #e0e0ff;
-        }
-        button {
-            background: #00ffff;
-            color: #000;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        button:hover {
-            background: #00bfff;
-            box-shadow: 0 0 15px #00ffff;
-        }
-        #results {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(0, 255, 0, 0.1);
-            border: 1px solid #00ff00;
-            border-radius: 10px;
-            white-space: pre-wrap;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.8em;
-            opacity: 0.7;
-            width: 100%;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lady Legalz Quantum AI 2026 - Global Legal Forensics Hub</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+    body {
+        margin: 0;
+        font-family: 'Orbitron', sans-serif;
+        background: radial-gradient(circle at top left, #0c0c20, #1a1a40, #10101f);
+        color: #e0f0ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        transition: background 0.5s ease;
+    }
+
+    header {
+        text-align: center;
+        padding: 50px 20px;
+        background: rgba(0, 0, 0, 0.65);
+        border-bottom: 2px solid #0ff;
+        box-shadow: 0 0 25px #0ff;
+        width: 100%;
+        backdrop-filter: blur(8px);
+    }
+
+    h1 {
+        font-size: 3rem;
+        color: #0ff;
+        text-shadow: 0 0 20px #0ff;
+        margin: 0;
+    }
+
+    h2 {
+        color: #0ff;
+        text-shadow: 0 0 10px #0ff;
+        margin-bottom: 15px;
+    }
+
+    .container {
+        width: 95%;
+        max-width: 1000px;
+        margin: 20px auto;
+        background: rgba(20,20,40,0.75);
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 0 40px rgba(0,255,255,0.3);
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    section {
+        background: rgba(0,0,0,0.45);
+        border: 1px solid #0ff;
+        border-radius: 15px;
+        padding: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 30px #0ff;
+    }
+
+    input[type="file"], input[type="text"], button {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border: none;
+        font-family: inherit;
+        font-size: 1rem;
+        background: #1e1e3f;
+        color: #e0f0ff;
+        outline: none;
+    }
+
+    button {
+        background: #0ff;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #0bbfff;
+        box-shadow: 0 0 20px #0ff;
+    }
+
+    #results {
+        margin-top: 15px;
+        padding: 15px;
+        background: rgba(0,255,0,0.1);
+        border-radius: 12px;
+        white-space: pre-wrap;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 0.8rem;
+        padding: 20px;
+        width: 100%;
+        opacity: 0.7;
+    }
+
+    a { color: #0ff; text-decoration: none; }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Lady Legalz Quantum Digital Forensics AI 2026</h1>
-        <p>Next-Gen No-Code Generative AI for Legal Digital Evidence Examination</p>
-        <p>Powered by TUOLAT LABZ Quantum Innovation Hub</p>
-    </header>
+<header>
+    <h1>Lady Legalz Quantum AI 2026</h1>
+    <p>Global No-Code Legal Forensics & Compliance Engine</p>
+    <p>Powered by TUOLAT LABZ Quantum Innovation Hub</p>
+</header>
 
-    <div class="container">
-        <section id="intro">
-            <h2>Welcome to the Future of Legal Digital Forensics</h2>
-            <p>This unique no-code generative AI tool, inspired by TUOLAT LABZ advancements, introduces 2026-era features for examining digital evidence in facial recognition, fingerprint analysis, cryptocurrency transaction forensics, and now <strong>DNA forensics</strong>.</p>
-            <p>Upload images for biometrics/DNA or wallet addresses for crypto analysis. The AI simulates advanced pattern recognition, deepfake detection, chain-of-custody logging, and compliance reporting – all with explanatory reasoning for court admissibility.</p>
-            <p><strong>Disclaimer:</strong> This is a client-side simulation for educational and demonstration purposes. Real forensic analysis requires certified tools and experts.</p>
-        </section>
+<div class="container">
+    <section id="intro">
+        <h2>Welcome to 2026 Legal Forensics</h2>
+        <p>This AI-driven tool integrates global legal analysis, multi-jurisdictional compliance, and advanced forensic simulations. Modules include:</p>
+        <ul>
+            <li>Facial Recognition</li>
+            <li>Fingerprint & Biometrics</li>
+            <li>Cryptocurrency Transaction Analysis</li>
+            <li>DNA Profiling & Probabilistic Genotyping</li>
+            <li>Legal Risk Scoring per Jurisdiction</li>
+            <li>Chain-of-Custody Automation</li>
+        </ul>
+        <p><strong>Note:</strong> This is a client-side simulation for demonstration and education. Real-world forensic analysis requires certified experts.</p>
+    </section>
 
-        <section id="facial">
-            <h2>Facial Recognition Forensics</h2>
-            <p>Upload a suspect or evidence image. AI analyzes features, detects potential deepfakes/manipulations, and generates a forensic report with bias mitigation notes.</p>
-            <input type="file" id="faceFile" accept="image/*">
-            <input type="text" id="faceReference" placeholder="Optional: Reference description or known identity">
-            <button onclick="analyzeFacial()">Analyze Facial Evidence</button>
-            <div id="faceResults"></div>
-        </section>
+    <section id="facial">
+        <h2>Facial Recognition</h2>
+        <input type="file" id="faceFile" accept="image/*">
+        <input type="text" id="faceReference" placeholder="Reference or Known Identity">
+        <button onclick="analyzeEvidence('facial')">Analyze Facial Evidence</button>
+        <div id="faceResults"></div>
+    </section>
 
-        <section id="fingerprint">
-            <h2>Fingerprint Analysis</h2>
-            <p>Upload a fingerprint scan image. AI examines minutiae points, ridge patterns, and match probability.</p>
-            <input type="file" id="printFile" accept="image/*">
-            <button onclick="analyzeFingerprint()">Analyze Fingerprint</button>
-            <div id="printResults"></div>
-        </section>
+    <section id="fingerprint">
+        <h2>Fingerprint Analysis</h2>
+        <input type="file" id="printFile" accept="image/*">
+        <button onclick="analyzeEvidence('fingerprint')">Analyze Fingerprint</button>
+        <div id="printResults"></div>
+    </section>
 
-        <section id="crypto">
-            <h2>Cryptocurrency Digital Analysis</h2>
-            <p>Enter a wallet address or transaction hash. AI traces potential flows, flags illicit patterns, and generates a compliance report.</p>
-            <input type="text" id="cryptoInput" placeholder="e.g., Bitcoin address or TXID">
-            <button onclick="analyzeCrypto()">Analyze Crypto Transaction</button>
-            <div id="cryptoResults"></div>
-        </section>
+    <section id="crypto">
+        <h2>Cryptocurrency Analysis</h2>
+        <input type="text" id="cryptoInput" placeholder="Wallet Address or TXID">
+        <button onclick="analyzeEvidence('crypto')">Analyze Crypto Transaction</button>
+        <div id="cryptoResults"></div>
+    </section>
 
-        <section id="dna">
-            <h2>DNA Forensics Analysis (New 2026 Module)</h2>
-            <p>Upload an image of a DNA electropherogram, gel, or evidence photo. The AI simulates STR profile analysis, match probability calculation, mixture deconvolution, and probabilistic genotyping.</p>
-            <input type="file" id="dnaFile" accept="image/*">
-            <input type="text" id="dnaReference" placeholder="Optional: Reference profile or suspect details">
-            <button onclick="analyzeDNA()">Analyze DNA Evidence</button>
-            <div id="dnaResults"></div>
-        </section>
-    </div>
+    <section id="dna">
+        <h2>DNA Forensics</h2>
+        <input type="file" id="dnaFile" accept="image/*">
+        <input type="text" id="dnaReference" placeholder="Reference Profile or Suspect Details">
+        <button onclick="analyzeEvidence('dna')">Analyze DNA Evidence</button>
+        <div id="dnaResults"></div>
+    </section>
+</div>
 
-    <footer>
-        <p>&copy; 2026 TUOLAT LABZ Quantum Innovation Hub | Open-Source Legal AI Ecosystem</p>
-        <p>For collaboration: Visit <a href="https://github.com/TUOLATLABZ" style="color:#00ffff;">GitHub</a></p>
-    </footer>
+<footer>
+    &copy; 2026 TUOLAT LABZ | Open-Source Legal AI Hub | <a href="https://github.com/TUOLATLABZ">GitHub</a>
+</footer>
 
-    <script>
-        function mockGenerativeAI(type, input) {
-            // Simulated 2026 generative AI response with unique, detailed reasoning
-            const reports = {
-                facial: `
-***2026 Quantum Forensic Report: Facial Recognition Analysis***
+<script>
+const analysisModules = {
+    facial: (ref) => `
+***Quantum Forensic Report: Facial Recognition***
 
-Evidence Uploaded: Suspect Image
-Reference: ${input || 'None provided'}
+Reference: ${ref || 'None'}
+- Key Landmarks: 128-point vector match
+- Deepfake Check: No manipulations detected
+- Confidence: 92.4%
+- Bias Mitigation: Trained on global dataset 2026
+- Legal Risk Score: Low
+- Compliance: Multi-jurisdiction review simulated
+- Chain-of-Custody: ${new Date().toLocaleString()}
+`,
 
-Generative AI Findings (Simulated Deep Learning Pattern Recognition):
-- Key facial landmarks detected: 128-point vector match.
-- Confidence Score: 92.4% match to known profiles (if reference provided).
-- Deepfake Detection: No manipulation artifacts found (pixel inconsistency < 0.5%, GAN traces absent).
-- Bias Mitigation: Model trained on diverse 2026 dataset (equitable across ethnicity/gender).
-- Potential Identification: High similarity to described features.
-- Explanatory Reasoning: Analysis based on advanced neural embeddings; transparent feature importance highlights eyes/nose contours as primary match drivers.
+    fingerprint: () => `
+***Quantum Forensic Report: Fingerprint Analysis***
+- Ridge Patterns: Loops 45%, Whorls 30%, Arches 25%
+- Minutiae Points: 48 unique
+- Match Probability: 98.7%
+- Contamination Check: Clear
+- Legal Risk Score: Medium-Low
+- Chain-of-Custody: ${new Date().toLocaleString()}
+`,
 
-Chain-of-Custody Log: Timestamped upload at ${new Date().toLocaleString()}.
-Recommendation: Admissible with expert verification. Risk Level: Low.
-                `,
-                fingerprint: `
-***2026 Quantum Forensic Report: Fingerprint Analysis***
-
-Evidence Uploaded: Fingerprint Scan
-
-Generative AI Findings (Simulated Minutiae Extraction):
-- Detected Patterns: Loops (45%), Whorls (30%), Arches (25%).
-- Minutiae Points: 48 unique bifurcations/ridge endings identified.
-- Match Probability: 98.7% to latent print standards.
-- Enhancement Simulation: AI-reconstructed partial smudges for clarity.
-- Explanatory Reasoning: Ridge flow continuity scored 0.96; no forgery indicators (e.g., digital overlays).
-
-Chain-of-Custody Log: Timestamped upload at ${new Date().toLocaleString()}.
-Recommendation: Strong evidentiary value. Integrity Verified.
-                `,
-                crypto: `
-***2026 Quantum Forensic Report: Cryptocurrency Analysis***
-
+    crypto: (input) => `
+***Quantum Forensic Report: Cryptocurrency Analysis***
 Input: ${input}
+- Linked Transfers: 15
+- Risk Score: 67% potential illicit activity
+- Compliance: Multi-jurisdiction screening simulated
+- Chain-of-Custody: ${new Date().toLocaleString()}
+`,
 
-Generative AI Findings (Simulated Blockchain Tracing):
-- Transaction History: 15 linked transfers detected.
-- Flow Pattern: Mixing service usage flagged (potential laundering indicator).
-- Illicit Risk Score: 67% (connections to known dark market clusters).
-- Compliance Check: OFAC/EU sanctions screen – No direct hits, but watchlist proximity.
-- Generative Summary: Funds originated from exchange deposit, routed through 3 hops.
-- Explanatory Reasoning: Graph neural network traced clustering coefficients > 0.8.
+    dna: (ref) => `
+***Quantum Forensic Report: DNA Analysis***
+Reference: ${ref || 'None'}
+- Loci Analyzed: 24 CODIS + Y-STR markers
+- Match Probability: 1 in 10^18
+- Mixture Detection: Single-source
+- Probabilistic Genotyping: Likelihood Ratio > 10^9
+- Legal Risk Score: Low
+- Chain-of-Custody: ${new Date().toLocaleString()}
+`
+};
 
-Chain-of-Custody Log: Query timestamped at ${new Date().toLocaleString()}.
-Recommendation: Further on-chain investigation advised. Report exportable for legal submission.
-                `,
-                dna: `
-***2026 Quantum Forensic Report: DNA Forensics Analysis***
+// Unified async evidence processor for speed
+async function analyzeEvidence(type) {
+    let file, input, ref, targetDiv;
 
-Evidence Uploaded: DNA Electropherogram / Gel Image
-Reference: ${input || 'None provided'}
+    switch(type) {
+        case 'facial':
+            file = document.getElementById('faceFile').files[0];
+            ref = document.getElementById('faceReference').value;
+            targetDiv = document.getElementById('faceResults');
+            break;
+        case 'fingerprint':
+            file = document.getElementById('printFile').files[0];
+            targetDiv = document.getElementById('printResults');
+            break;
+        case 'crypto':
+            input = document.getElementById('cryptoInput').value.trim();
+            targetDiv = document.getElementById('cryptoResults');
+            break;
+        case 'dna':
+            file = document.getElementById('dnaFile').files[0];
+            ref = document.getElementById('dnaReference').value;
+            targetDiv = document.getElementById('dnaResults');
+            break;
+    }
 
-Generative AI Findings (Simulated STR Profiling & Probabilistic Genotyping):
-- Loci Analyzed: 24 CORE CODIS loci + advanced Y-STR markers.
-- Allele Calls: Clear peaks detected at D3S1358 (15,16), vWA (17,18), etc.
-- Match Probability: Random Match Probability = 1 in 10^18 (quintillion).
-- Mixture Detection: Single-source profile (no dropout or stutter >5%).
-- Probabilistic Genotyping: Likelihood Ratio > 1 billion favoring inclusion.
-- Contamination Check: No foreign alleles; degradation model applied.
-- Explanatory Reasoning: Peak height ratios and baseline noise analyzed via continuous probabilistic models; transparent likelihood calculations provided for court.
+    if ((file && !file.type.startsWith('image/')) && type !== 'crypto') {
+        return alert('Upload a valid image file!');
+    }
+    if (type === 'crypto' && !input) return alert('Enter a wallet or TXID!');
 
-Chain-of-Custody Log: Timestamped upload at ${new Date().toLocaleString()}.
-Recommendation: Extremely strong evidentiary value. Fully admissible under 2026 standards.
-                `
-            };
-            return reports[type] || 'Analysis complete.';
-        }
-
-        function analyzeFacial() {
-            const file = document.getElementById('faceFile').files[0];
-            const ref = document.getElementById('faceReference').value;
-            if (!file) return alert('Upload an image!');
-            const reader = new FileReader();
-            reader.onload = () => document.getElementById('faceResults').innerHTML = '<img src="' + reader.result + '" style="max-width:300px;"><div id="results">' + mockGenerativeAI('facial', ref) + '</div>';
-            reader.readAsDataURL(file);
-        }
-
-        function analyzeFingerprint() {
-            const file = document.getElementById('printFile').files[0];
-            if (!file) return alert('Upload an image!');
-            const reader = new FileReader();
-            reader.onload = () => document.getElementById('printResults').innerHTML = '<img src="' + reader.result + '" style="max-width:300px;"><div id="results">' + mockGenerativeAI('fingerprint') + '</div>';
-            reader.readAsDataURL(file);
-        }
-
-        function analyzeCrypto() {
-            const input = document.getElementById('cryptoInput').value.trim();
-            if (!input) return alert('Enter a wallet or TXID!');
-            document.getElementById('cryptoResults').innerHTML = mockGenerativeAI('crypto', input);
-        }
-
-        function analyzeDNA() {
-            const file = document.getElementById('dnaFile').files[0];
-            const ref = document.getElementById('dnaReference').value;
-            if (!file) return alert('Upload a DNA image!');
-            const reader = new FileReader();
-            reader.onload = () => document.getElementById('dnaResults').innerHTML = '<img src="' + reader.result + '" style="max-width:300px;"><div id="results">' + mockGenerativeAI('dna', ref) + '</div>';
-            reader.readAsDataURL(file);
-        }
-    </script>
+    let output = '';
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = e => {
+            targetDiv.innerHTML = `<img src="${e.target.result}" style="max-width:300px;border-radius:8px;"><div id="results">${analysisModules[type](ref)}</div>`;
+        };
+        reader.readAsDataURL(file);
+    } else {
+        targetDiv.innerHTML = `<div id="results">${analysisModules[type](input || ref)}</div>`;
+    }
+}
+</script>
 </body>
 </html>
