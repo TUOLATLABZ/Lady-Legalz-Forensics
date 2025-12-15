@@ -3,93 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lady Legalz Quantum Forensics 2026</title>
+<title>Lady Legalz Quantum Forensics 2026 - Interactive</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
   body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at top left, #0d001f, #1c0038);
-    color: #e0e0ff;
-    min-height: 100vh;
-    overflow-x: hidden;
+    margin:0; font-family:'Inter',sans-serif;
+    background: radial-gradient(circle at top left, #0d001f,#1c0038);
+    color:#e0e0ff; overflow-x:hidden;
   }
   header {
-    padding: 60px 20px;
-    text-align: center;
-    background: rgba(0,0,0,0.75);
-    border-bottom: 2px solid #00ffff;
-    box-shadow: 0 0 30px #00ffff;
+    padding:60px 20px; text-align:center;
+    background: rgba(0,0,0,0.8); border-bottom:2px solid #0ff;
+    box-shadow:0 0 50px #0ff;
   }
-  h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
-    color: #0ff;
-    text-shadow: 0 0 15px #0ff;
-    margin: 0;
-  }
-  .subtitle {
-    font-size: 1.2rem;
-    margin-top: 8px;
-    color: #aaffff;
-  }
-  .container {
-    width: 95%;
-    max-width: 1000px;
-    margin: 30px auto;
-    display: grid;
-    gap: 32px;
-  }
+  h1 { font-family:'Orbitron',sans-serif; font-size:3rem; color:#0ff; text-shadow:0 0 20px #0ff; margin:0; }
+  .subtitle { font-size:1.2rem; margin-top:8px; color:#aaffff; }
+  .container { width:95%; max-width:1200px; margin:30px auto; display:grid; gap:32px; }
   section {
-    background: rgba(20,10,40,0.6);
-    border: 1px solid #00ffff;
-    border-radius: 20px;
-    padding: 25px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 40px rgba(0,255,255,0.2);
+    background: rgba(20,10,40,0.7); border-radius:20px; padding:25px;
+    border:1px solid #0ff; backdrop-filter:blur(12px); box-shadow:0 0 50px rgba(0,255,255,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
   }
-  h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: #00ffff;
-    text-shadow: 0 0 10px #00ffff;
-  }
-  input, button {
-    width: 100%;
-    padding: 14px;
-    margin-top: 12px;
-    border-radius: 8px;
-    border: none;
-    font-size: 1rem;
-    background: rgba(20,20,40,0.8);
-    color: #e0e0ff;
-  }
-  button {
-    background: #00ffff;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  button:hover {
-    background: #00dfff;
-    box-shadow: 0 0 20px #00ffff;
-  }
-  .results {
-    margin-top: 18px;
-    padding: 18px;
-    background: rgba(0,255,0,0.1);
-    border-radius: 12px;
-    white-space: pre-wrap;
-  }
-  footer {
-    text-align: center;
-    padding: 25px;
-    font-size: 0.9rem;
-    color: #aaffff;
-    margin-top: 40px;
-    border-top: 1px solid #00ffff;
-  }
+  section:hover { transform: translateY(-6px); box-shadow:0 0 80px rgba(0,255,255,0.5); }
+  h2 { font-family:'Orbitron',sans-serif; color:#0ff; text-shadow:0 0 15px #0ff; }
+  input, button { width:100%; padding:14px; margin-top:12px; border-radius:10px; border:none; font-size:1rem; background: rgba(20,20,40,0.85); color:#e0e0ff; }
+  button { background:#0ff; font-weight:bold; cursor:pointer; transition:0.3s; }
+  button:hover { background:#0dffff; box-shadow:0 0 25px #0ff; }
+  .results { margin-top:18px; padding:18px; background: rgba(0,255,255,0.05); border-radius:12px; white-space:pre-wrap; min-height:150px; position:relative; overflow:hidden; }
+  canvas { max-width:100%; margin-top:15px; }
+  footer { text-align:center; padding:25px; font-size:0.9rem; color:#aaffff; margin-top:40px; border-top:1px solid #0ff; }
+  .evidence-preview { display:flex; flex-wrap:wrap; gap:10px; margin-top:15px; }
+  .evidence-preview img { max-width:120px; border-radius:10px; transition: transform 0.4s, box-shadow 0.4s; cursor:pointer; }
+  .evidence-preview img:hover { transform: scale(1.1) rotate(2deg); box-shadow:0 0 20px #0ff; }
 </style>
 </head>
 
@@ -97,123 +43,87 @@
 
 <header>
   <h1>Lady Legalz Quantum Forensics 2026</h1>
-  <div class="subtitle">
-    Global Legal Evidence Intelligence • Deep Pattern Recognition • Compliance‑Ready Output
-  </div>
+  <div class="subtitle">Interactive AI Evidence Suite • Global Legal Intelligence • Neon Quantum Interface</div>
 </header>
 
 <div class="container">
 
   <section id="face-section">
     <h2>Facial Recognition Forensics</h2>
-    <p>Upload suspect/evidence imagery. Smart deepfake detection & bias‑aware similarity scoring.</p>
-    <input type="file" id="face-input" accept="image/*">
-    <button onclick="processEvidence('facial')">Analyze Facial Evidence</button>
+    <input type="file" id="face-input" accept="image/*" multiple>
+    <button onclick="analyzeEvidence('facial')">Analyze Facial Evidence</button>
     <div id="face-results" class="results"></div>
   </section>
 
   <section id="fingerprint-section">
-    <h2>Fingerprint & Biometrics Analysis</h2>
-    <p>Minutiae extraction, ridge flow mapping, match scoring with multi‑angle reports.</p>
-    <input type="file" id="finger-input" accept="image/*">
-    <button onclick="processEvidence('fingerprint')">Analyze Fingerprint</button>
+    <h2>Fingerprint Analysis</h2>
+    <input type="file" id="finger-input" accept="image/*" multiple>
+    <button onclick="analyzeEvidence('fingerprint')">Analyze Fingerprint Evidence</button>
     <div id="finger-results" class="results"></div>
   </section>
 
   <section id="crypto-section">
-    <h2>Cryptocurrency & Blockchain Trace</h2>
-    <p>Enter wallet address/transaction hash for cross‑chain compliance inspection.</p>
-    <input type="text" id="crypto-input" placeholder="e.g., Bitcoin/ETH address or TXID">
-    <button onclick="processEvidence('crypto')">Blockchain Forensics Report</button>
+    <h2>Blockchain & Crypto Trace</h2>
+    <input type="text" id="crypto-input" placeholder="Wallet or TXID">
+    <button onclick="analyzeEvidence('crypto')">Generate Blockchain Report</button>
     <div id="crypto-results" class="results"></div>
   </section>
 
   <section id="dna-section">
-    <h2>DNA Quantum Profiling</h2>
-    <p>Upload electropherogram/gel imagery for simulated STR profiling.</p>
-    <input type="file" id="dna-input" accept="image/*">
-    <button onclick="processEvidence('dna')">Analyze DNA Evidence</button>
+    <h2>DNA & STR Profiling</h2>
+    <input type="file" id="dna-input" accept="image/*" multiple>
+    <button onclick="analyzeEvidence('dna')">Analyze DNA Evidence</button>
     <div id="dna-results" class="results"></div>
-  </section>
-
-  <section id="report-section">
-    <h2>Chain‑of‑Custody & Legal Risk Report</h2>
-    <p>Generate complete forensic log, legal compliance summary, admissibility notes, and global risk scoring.</p>
-    <button onclick="generateFullReport()">Generate Full Forensic Report</button>
-    <div id="full-report" class="results"></div>
   </section>
 
 </div>
 
 <footer>
-  &copy; 2026 Lady Legalz • TUOLAT LABZ Quantum Evidence Suite • For Demonstration Only — Not Certified For Legal Use
+  &copy; 2026 Lady Legalz • TUOLAT LABZ • Interactive AI Forensics Demo
 </footer>
 
 <script>
-function mockAIReport(type, input) {
-  const timestamp = new Date().toLocaleString();
-  const base = `*** Lady Legalz Forensic Results [Quantum 2026] ***\nTimestamp: ${timestamp}\n\n`;
+function mockAnalysis(type, filesOrInput) {
+  const timestamp = new Date().toLocaleTimeString();
+  const base = `*** Lady Legalz Quantum Forensics ***\nTimestamp: ${timestamp}\n\n`;
   const modules = {
-    facial: `${base}Facial Forensics:\n• Feature vector match score: 94.2%\n• Deepfake artifacts: None detected\n• Bias mitigation applied\n• Notes: High confidence biometric alignment.`,
-    fingerprint: `${base}Fingerprint Analysis:\n• Minutiae extracted: 52 points\n• Ridge flow confidence: 0.97\n• Match probability: 99.1%\n• Notes: Clear ridge detail, no smudge contamination.`,
-    crypto: `${base}Blockchain Forensics:\nInput: ${input}\n• Linked hops: 12\n• Mixing services flagged: YES\n• Illicit clustering score: 72%\n• Legal flags: Multi‑jurisdiction watchlist proximity.`,
-    dna: `${base}DNA Profiling:\n• STR loci evaluated: 24\n• Match likelihood (LR): 1×10^9\n• Mixture model: Single source\n• Notes: High‑resolution allele clarity.`
+    facial: `${base}Facial AI Analysis:\n• Match Confidence: ${(80+Math.random()*20).toFixed(2)}%\n• Deepfake Risk: Low\n• Bias Mitigation Applied`,
+    fingerprint: `${base}Fingerprint AI Analysis:\n• Minutiae detected: ${(40+Math.random()*15).toFixed(0)} points\n• Match Confidence: ${(90+Math.random()*10).toFixed(2)}%\n• Ridge Clarity: High`,
+    crypto: `${base}Blockchain Trace Analysis:\n• Linked Hops: ${(5+Math.random()*10).toFixed(0)}\n• Suspicious Activity Score: ${(30+Math.random()*50).toFixed(0)}%\n• Compliance Check: Complete`,
+    dna: `${base}DNA STR Profiling:\n• Loci Analyzed: 24\n• Match Likelihood: ${(1e8+Math.random()*1e8).toFixed(0)}\n• Contamination: None`
   };
   return modules[type] || `${base}No analysis available.`;
 }
 
-function processEvidence(type) {
-  const resultsMap = {
-    facial: 'face-results',
-    fingerprint: 'finger-results',
-    crypto: 'crypto-results',
-    dna: 'dna-results'
-  };
-  const containerId = resultsMap[type];
-  const container = document.getElementById(containerId);
-  let inputText = '';
-
-  if(type === 'crypto') {
-    const val = document.getElementById('crypto-input').value.trim();
-    if(!val) { alert('Enter a wallet or transaction hash'); return; }
-    inputText = val;
-  } else {
-    const file = document.getElementById(`${type}-input`).files[0];
-    if(!file) { alert('Upload an image'); return; }
-    // simulate preview
-    const reader = new FileReader();
-    reader.onload = () => {
-      container.innerHTML = `<img src="${reader.result}" style="max-width:220px;border-radius:8px;"><br>` +
-                             `<pre>${mockAIReport(type, inputText)}</pre>`;
-    };
-    reader.readAsDataURL(file);
-    return;
-  }
-
-  container.innerHTML = `<pre>${mockAIReport(type, inputText)}</pre>`;
+function createCharts(containerId) {
+  const ctxId = containerId+'-chart';
+  if(document.getElementById(ctxId)) document.getElementById(ctxId).remove();
+  const canvas = document.createElement('canvas'); canvas.id = ctxId;
+  document.getElementById(containerId).appendChild(canvas);
+  const data = { labels:['Confidence','Risk','Completeness'], datasets:[{label:'AI Score', data:[Math.random()*100,Math.random()*100,Math.random()*100], backgroundColor:['#0ff','#f0f','#ff0']} ]};
+  new Chart(canvas,{type:'bar',data:data,options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{max:100}}}});
 }
 
-function generateFullReport() {
-  const fullReport = `
-*** LADY LEGALZ GLOBAL FORENSIC REPORT ***
-Generated: ${new Date().toLocaleString()}
-
-• Facial Forensics: Completed
-• Fingerprint Analysis: Completed
-• Blockchain Trace: Completed
-• DNA Profiling: Completed
-
-LEGAL COMPLIANCE:
-• Multijurisdictional risk scoring applied
-• Chain‑of‑Custody logs timestamped
-• Admissibility indicators provided (educational simulation)
-
-SUMMARY:
-This report illustrates combined forensic vectors for legal review. Not certified for court presentation.
-
-END OF REPORT
-`;
-  document.getElementById('full-report').innerText = fullReport;
+function analyzeEvidence(type) {
+  const containerMap = { facial:'face-results', fingerprint:'finger-results', crypto:'crypto-results', dna:'dna-results' };
+  const container = document.getElementById(containerMap[type]);
+  container.innerHTML='Analyzing...';
+  setTimeout(()=>{
+    container.innerHTML=`<pre>${mockAnalysis(type)}</pre>`;
+    if(type!=='crypto') {
+      const inputFiles = document.getElementById(`${type}-input`).files;
+      if(inputFiles.length>0){
+        const preview = document.createElement('div'); preview.className='evidence-preview';
+        Array.from(inputFiles).forEach(f=>{
+          const reader = new FileReader();
+          reader.onload = e=>{ const img=document.createElement('img'); img.src=e.target.result; preview.appendChild(img); };
+          reader.readAsDataURL(f);
+        });
+        container.appendChild(preview);
+      }
+    }
+    createCharts(containerMap[type]);
+  },1000+Math.random()*1000);
 }
 </script>
 
