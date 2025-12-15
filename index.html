@@ -1,263 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lady Legalz Quantum AI 2026 - Global Legal Forensics Hub</title>
+<title>Lady Legalz Quantum Forensics 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
-    body {
-        margin: 0;
-        font-family: 'Orbitron', sans-serif;
-        background: radial-gradient(circle at top left, #0c0c20, #1a1a40, #10101f);
-        color: #e0f0ff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-        transition: background 0.5s ease;
-    }
-
-    header {
-        text-align: center;
-        padding: 50px 20px;
-        background: rgba(0, 0, 0, 0.65);
-        border-bottom: 2px solid #0ff;
-        box-shadow: 0 0 25px #0ff;
-        width: 100%;
-        backdrop-filter: blur(8px);
-    }
-
-    h1 {
-        font-size: 3rem;
-        color: #0ff;
-        text-shadow: 0 0 20px #0ff;
-        margin: 0;
-    }
-
-    h2 {
-        color: #0ff;
-        text-shadow: 0 0 10px #0ff;
-        margin-bottom: 15px;
-    }
-
-    .container {
-        width: 95%;
-        max-width: 1000px;
-        margin: 20px auto;
-        background: rgba(20,20,40,0.75);
-        border-radius: 20px;
-        padding: 25px;
-        box-shadow: 0 0 40px rgba(0,255,255,0.3);
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    section {
-        background: rgba(0,0,0,0.45);
-        border: 1px solid #0ff;
-        border-radius: 15px;
-        padding: 20px;
-        transition: transform 0.3s ease;
-    }
-
-    section:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 30px #0ff;
-    }
-
-    input[type="file"], input[type="text"], button {
-        width: 100%;
-        padding: 12px;
-        margin: 10px 0;
-        border-radius: 8px;
-        border: none;
-        font-family: inherit;
-        font-size: 1rem;
-        background: #1e1e3f;
-        color: #e0f0ff;
-        outline: none;
-    }
-
-    button {
-        background: #0ff;
-        color: #000;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    button:hover {
-        background: #0bbfff;
-        box-shadow: 0 0 20px #0ff;
-    }
-
-    #results {
-        margin-top: 15px;
-        padding: 15px;
-        background: rgba(0,255,0,0.1);
-        border-radius: 12px;
-        white-space: pre-wrap;
-        font-size: 0.9rem;
-    }
-
-    footer {
-        text-align: center;
-        font-size: 0.8rem;
-        padding: 20px;
-        width: 100%;
-        opacity: 0.7;
-    }
-
-    a { color: #0ff; text-decoration: none; }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top left, #0d001f, #1c0038);
+    color: #e0e0ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  header {
+    padding: 60px 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.75);
+    border-bottom: 2px solid #00ffff;
+    box-shadow: 0 0 30px #00ffff;
+  }
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: #0ff;
+    text-shadow: 0 0 15px #0ff;
+    margin: 0;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+    margin-top: 8px;
+    color: #aaffff;
+  }
+  .container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 30px auto;
+    display: grid;
+    gap: 32px;
+  }
+  section {
+    background: rgba(20,10,40,0.6);
+    border: 1px solid #00ffff;
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(0,255,255,0.2);
+  }
+  h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+  }
+  input, button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background: rgba(20,20,40,0.8);
+    color: #e0e0ff;
+  }
+  button {
+    background: #00ffff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  button:hover {
+    background: #00dfff;
+    box-shadow: 0 0 20px #00ffff;
+  }
+  .results {
+    margin-top: 18px;
+    padding: 18px;
+    background: rgba(0,255,0,0.1);
+    border-radius: 12px;
+    white-space: pre-wrap;
+  }
+  footer {
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+    color: #aaffff;
+    margin-top: 40px;
+    border-top: 1px solid #00ffff;
+  }
 </style>
 </head>
+
 <body>
+
 <header>
-    <h1>Lady Legalz Quantum AI 2026</h1>
-    <p>Global No-Code Legal Forensics & Compliance Engine</p>
-    <p>Powered by TUOLAT LABZ Quantum Innovation Hub</p>
+  <h1>Lady Legalz Quantum Forensics 2026</h1>
+  <div class="subtitle">
+    Global Legal Evidence Intelligence • Deep Pattern Recognition • Compliance‑Ready Output
+  </div>
 </header>
 
 <div class="container">
-    <section id="intro">
-        <h2>Welcome to 2026 Legal Forensics</h2>
-        <p>This AI-driven tool integrates global legal analysis, multi-jurisdictional compliance, and advanced forensic simulations. Modules include:</p>
-        <ul>
-            <li>Facial Recognition</li>
-            <li>Fingerprint & Biometrics</li>
-            <li>Cryptocurrency Transaction Analysis</li>
-            <li>DNA Profiling & Probabilistic Genotyping</li>
-            <li>Legal Risk Scoring per Jurisdiction</li>
-            <li>Chain-of-Custody Automation</li>
-        </ul>
-        <p><strong>Note:</strong> This is a client-side simulation for demonstration and education. Real-world forensic analysis requires certified experts.</p>
-    </section>
 
-    <section id="facial">
-        <h2>Facial Recognition</h2>
-        <input type="file" id="faceFile" accept="image/*">
-        <input type="text" id="faceReference" placeholder="Reference or Known Identity">
-        <button onclick="analyzeEvidence('facial')">Analyze Facial Evidence</button>
-        <div id="faceResults"></div>
-    </section>
+  <section id="face-section">
+    <h2>Facial Recognition Forensics</h2>
+    <p>Upload suspect/evidence imagery. Smart deepfake detection & bias‑aware similarity scoring.</p>
+    <input type="file" id="face-input" accept="image/*">
+    <button onclick="processEvidence('facial')">Analyze Facial Evidence</button>
+    <div id="face-results" class="results"></div>
+  </section>
 
-    <section id="fingerprint">
-        <h2>Fingerprint Analysis</h2>
-        <input type="file" id="printFile" accept="image/*">
-        <button onclick="analyzeEvidence('fingerprint')">Analyze Fingerprint</button>
-        <div id="printResults"></div>
-    </section>
+  <section id="fingerprint-section">
+    <h2>Fingerprint & Biometrics Analysis</h2>
+    <p>Minutiae extraction, ridge flow mapping, match scoring with multi‑angle reports.</p>
+    <input type="file" id="finger-input" accept="image/*">
+    <button onclick="processEvidence('fingerprint')">Analyze Fingerprint</button>
+    <div id="finger-results" class="results"></div>
+  </section>
 
-    <section id="crypto">
-        <h2>Cryptocurrency Analysis</h2>
-        <input type="text" id="cryptoInput" placeholder="Wallet Address or TXID">
-        <button onclick="analyzeEvidence('crypto')">Analyze Crypto Transaction</button>
-        <div id="cryptoResults"></div>
-    </section>
+  <section id="crypto-section">
+    <h2>Cryptocurrency & Blockchain Trace</h2>
+    <p>Enter wallet address/transaction hash for cross‑chain compliance inspection.</p>
+    <input type="text" id="crypto-input" placeholder="e.g., Bitcoin/ETH address or TXID">
+    <button onclick="processEvidence('crypto')">Blockchain Forensics Report</button>
+    <div id="crypto-results" class="results"></div>
+  </section>
 
-    <section id="dna">
-        <h2>DNA Forensics</h2>
-        <input type="file" id="dnaFile" accept="image/*">
-        <input type="text" id="dnaReference" placeholder="Reference Profile or Suspect Details">
-        <button onclick="analyzeEvidence('dna')">Analyze DNA Evidence</button>
-        <div id="dnaResults"></div>
-    </section>
+  <section id="dna-section">
+    <h2>DNA Quantum Profiling</h2>
+    <p>Upload electropherogram/gel imagery for simulated STR profiling.</p>
+    <input type="file" id="dna-input" accept="image/*">
+    <button onclick="processEvidence('dna')">Analyze DNA Evidence</button>
+    <div id="dna-results" class="results"></div>
+  </section>
+
+  <section id="report-section">
+    <h2>Chain‑of‑Custody & Legal Risk Report</h2>
+    <p>Generate complete forensic log, legal compliance summary, admissibility notes, and global risk scoring.</p>
+    <button onclick="generateFullReport()">Generate Full Forensic Report</button>
+    <div id="full-report" class="results"></div>
+  </section>
+
 </div>
 
 <footer>
-    &copy; 2026 TUOLAT LABZ | Open-Source Legal AI Hub | <a href="https://github.com/TUOLATLABZ">GitHub</a>
+  &copy; 2026 Lady Legalz • TUOLAT LABZ Quantum Evidence Suite • For Demonstration Only — Not Certified For Legal Use
 </footer>
 
 <script>
-const analysisModules = {
-    facial: (ref) => `
-***Quantum Forensic Report: Facial Recognition***
+function mockAIReport(type, input) {
+  const timestamp = new Date().toLocaleString();
+  const base = `*** Lady Legalz Forensic Results [Quantum 2026] ***\nTimestamp: ${timestamp}\n\n`;
+  const modules = {
+    facial: `${base}Facial Forensics:\n• Feature vector match score: 94.2%\n• Deepfake artifacts: None detected\n• Bias mitigation applied\n• Notes: High confidence biometric alignment.`,
+    fingerprint: `${base}Fingerprint Analysis:\n• Minutiae extracted: 52 points\n• Ridge flow confidence: 0.97\n• Match probability: 99.1%\n• Notes: Clear ridge detail, no smudge contamination.`,
+    crypto: `${base}Blockchain Forensics:\nInput: ${input}\n• Linked hops: 12\n• Mixing services flagged: YES\n• Illicit clustering score: 72%\n• Legal flags: Multi‑jurisdiction watchlist proximity.`,
+    dna: `${base}DNA Profiling:\n• STR loci evaluated: 24\n• Match likelihood (LR): 1×10^9\n• Mixture model: Single source\n• Notes: High‑resolution allele clarity.`
+  };
+  return modules[type] || `${base}No analysis available.`;
+}
 
-Reference: ${ref || 'None'}
-- Key Landmarks: 128-point vector match
-- Deepfake Check: No manipulations detected
-- Confidence: 92.4%
-- Bias Mitigation: Trained on global dataset 2026
-- Legal Risk Score: Low
-- Compliance: Multi-jurisdiction review simulated
-- Chain-of-Custody: ${new Date().toLocaleString()}
-`,
+function processEvidence(type) {
+  const resultsMap = {
+    facial: 'face-results',
+    fingerprint: 'finger-results',
+    crypto: 'crypto-results',
+    dna: 'dna-results'
+  };
+  const containerId = resultsMap[type];
+  const container = document.getElementById(containerId);
+  let inputText = '';
 
-    fingerprint: () => `
-***Quantum Forensic Report: Fingerprint Analysis***
-- Ridge Patterns: Loops 45%, Whorls 30%, Arches 25%
-- Minutiae Points: 48 unique
-- Match Probability: 98.7%
-- Contamination Check: Clear
-- Legal Risk Score: Medium-Low
-- Chain-of-Custody: ${new Date().toLocaleString()}
-`,
+  if(type === 'crypto') {
+    const val = document.getElementById('crypto-input').value.trim();
+    if(!val) { alert('Enter a wallet or transaction hash'); return; }
+    inputText = val;
+  } else {
+    const file = document.getElementById(`${type}-input`).files[0];
+    if(!file) { alert('Upload an image'); return; }
+    // simulate preview
+    const reader = new FileReader();
+    reader.onload = () => {
+      container.innerHTML = `<img src="${reader.result}" style="max-width:220px;border-radius:8px;"><br>` +
+                             `<pre>${mockAIReport(type, inputText)}</pre>`;
+    };
+    reader.readAsDataURL(file);
+    return;
+  }
 
-    crypto: (input) => `
-***Quantum Forensic Report: Cryptocurrency Analysis***
-Input: ${input}
-- Linked Transfers: 15
-- Risk Score: 67% potential illicit activity
-- Compliance: Multi-jurisdiction screening simulated
-- Chain-of-Custody: ${new Date().toLocaleString()}
-`,
+  container.innerHTML = `<pre>${mockAIReport(type, inputText)}</pre>`;
+}
 
-    dna: (ref) => `
-***Quantum Forensic Report: DNA Analysis***
-Reference: ${ref || 'None'}
-- Loci Analyzed: 24 CODIS + Y-STR markers
-- Match Probability: 1 in 10^18
-- Mixture Detection: Single-source
-- Probabilistic Genotyping: Likelihood Ratio > 10^9
-- Legal Risk Score: Low
-- Chain-of-Custody: ${new Date().toLocaleString()}
-`
-};
+function generateFullReport() {
+  const fullReport = `
+*** LADY LEGALZ GLOBAL FORENSIC REPORT ***
+Generated: ${new Date().toLocaleString()}
 
-// Unified async evidence processor for speed
-async function analyzeEvidence(type) {
-    let file, input, ref, targetDiv;
+• Facial Forensics: Completed
+• Fingerprint Analysis: Completed
+• Blockchain Trace: Completed
+• DNA Profiling: Completed
 
-    switch(type) {
-        case 'facial':
-            file = document.getElementById('faceFile').files[0];
-            ref = document.getElementById('faceReference').value;
-            targetDiv = document.getElementById('faceResults');
-            break;
-        case 'fingerprint':
-            file = document.getElementById('printFile').files[0];
-            targetDiv = document.getElementById('printResults');
-            break;
-        case 'crypto':
-            input = document.getElementById('cryptoInput').value.trim();
-            targetDiv = document.getElementById('cryptoResults');
-            break;
-        case 'dna':
-            file = document.getElementById('dnaFile').files[0];
-            ref = document.getElementById('dnaReference').value;
-            targetDiv = document.getElementById('dnaResults');
-            break;
-    }
+LEGAL COMPLIANCE:
+• Multijurisdictional risk scoring applied
+• Chain‑of‑Custody logs timestamped
+• Admissibility indicators provided (educational simulation)
 
-    if ((file && !file.type.startsWith('image/')) && type !== 'crypto') {
-        return alert('Upload a valid image file!');
-    }
-    if (type === 'crypto' && !input) return alert('Enter a wallet or TXID!');
+SUMMARY:
+This report illustrates combined forensic vectors for legal review. Not certified for court presentation.
 
-    let output = '';
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = e => {
-            targetDiv.innerHTML = `<img src="${e.target.result}" style="max-width:300px;border-radius:8px;"><div id="results">${analysisModules[type](ref)}</div>`;
-        };
-        reader.readAsDataURL(file);
-    } else {
-        targetDiv.innerHTML = `<div id="results">${analysisModules[type](input || ref)}</div>`;
-    }
+END OF REPORT
+`;
+  document.getElementById('full-report').innerText = fullReport;
 }
 </script>
+
 </body>
 </html>
