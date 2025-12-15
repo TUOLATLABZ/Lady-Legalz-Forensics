@@ -1,123 +1,126 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="neon-dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lady Legalz Neo-Quantum Forensics 2026 - Innovation Hub</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Exo+2:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <style>
-  body {
-    margin:0; font-family:'Inter',sans-serif;
-    background: radial-gradient(circle at top left, #0a001a, #15002f, #200040);
-    color:#e6e6ff; overflow-x:hidden;
-    position:relative;
-    min-height:100vh;
-  }
-  body::before {
-    content:''; position:absolute; top:0; left:0; width:100%; height:200%;
-    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Ccircle cx="50" cy="50" r="1" fill="%2300ffff" opacity="0.6"/%3E%3C/svg%3E') repeat;
-    opacity:0.08; animation: particle-float 40s linear infinite;
-    pointer-events:none;
-  }
-  @keyframes particle-float { 0% { transform: translateY(0); } 100% { transform: translateY(-100px); } }
-  header {
-    padding:90px 20px 70px; text-align:center;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.7));
-    border-bottom:4px solid #00ffff; box-shadow:0 0 80px #00ffff;
-    position:relative; overflow:hidden;
-  }
-  header::after {
-    content:''; position:absolute; bottom:0; left:0; width:100%; height:30px;
-    background: linear-gradient(to bottom, #00ffff, transparent); opacity:0.6;
-  }
-  h1 { 
-    font-family:'Orbitron',sans-serif; font-size:4rem; color:#00ffff; 
-    text-shadow:0 0 30px #00ffff, 0 0 60px #00ffff; margin:0; letter-spacing:4px; 
-  }
-  .subtitle { 
-    font-family:'Exo 2',sans-serif; font-size:1.5rem; margin-top:15px; color:#ccffff; 
-    text-shadow:0 0 15px #00ffff; letter-spacing:1px;
-  }
-  .tagline { font-size:1.1rem; margin-top:10px; color:#aaffff; opacity:0.9; }
-  .container { 
-    width:95%; max-width:1500px; margin:50px auto; 
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:45px; 
-  }
-  section {
-    background: rgba(15,5,35,0.8); border-radius:28px; padding:35px;
-    border:2px solid #00ffff; backdrop-filter:blur(18px); 
-    box-shadow:0 0 70px rgba(0,255,255,0.5);
-    transition: transform 0.4s cubic-bezier(0.25,0.8,0.25,1), box-shadow 0.4s;
-    position:relative; overflow:hidden;
-  }
-  section::before {
-    content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%;
-    background: radial-gradient(circle, rgba(0,255,255,0.15) 0%, transparent 70%);
-    opacity:0; transition:opacity 0.6s;
-  }
-  section:hover::before { opacity:1; }
-  section:hover { transform: translateY(-12px) scale(1.02); box-shadow:0 0 100px rgba(0,255,255,0.7); }
-  h2 { 
-    font-family:'Orbitron',sans-serif; color:#00ffff; 
-    text-shadow:0 0 20px #00ffff; margin-top:0; font-size:1.8rem;
-  }
-  input, button { 
-    width:100%; padding:16px; margin-top:14px; border-radius:12px; border:none; 
-    font-size:1.1rem; background: rgba(20,20,50,0.9); color:#e6e6ff; 
-    transition:0.3s;
-  }
-  input:focus { outline:none; box-shadow:0 0 15px #00ffff; }
-  button { 
-    background: linear-gradient(to right, #00ffff, #00bfff); font-weight:bold; 
-    cursor:pointer; color:#000; text-transform:uppercase; letter-spacing:1px;
-  }
-  button:hover { 
-    background: linear-gradient(to right, #00efff, #00ffff); 
-    box-shadow:0 0 30px #00ffff; transform:translateY(-2px);
-  }
-  .results { 
-    margin-top:20px; padding:20px; background: rgba(0,255,255,0.08); 
-    border-radius:14px; white-space:pre-wrap; min-height:180px; 
-    position:relative; overflow:hidden; font-family:'Exo 2',sans-serif;
-  }
-  canvas { max-width:100%; margin-top:20px; border-radius:10px; }
-  .evidence-preview { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
-  .evidence-preview img { 
-    max-width:140px; border-radius:12px; border:1px solid #00ffff;
-    transition: transform 0.4s, box-shadow 0.4s; cursor:pointer; 
-  }
-  .evidence-preview img:hover { 
-    transform: scale(1.15) rotate(3deg); box-shadow:0 0 30px #00ffff; 
-  }
-  footer { 
-    text-align:center; padding:40px; font-size:1rem; color:#ccffff; 
-    margin-top:80px; border-top:2px solid #00ffff; background:rgba(0,0,0,0.6);
-  }
-  .resources {
-    margin-top:60px; padding:40px; background:rgba(10,5,30,0.7);
-    border-radius:25px; border:1px dashed #00ffff;
-  }
-  .resources h2 { text-align:center; margin-bottom:30px; }
-  .resource-grid {
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:25px;
-  }
-  .resource-card {
-    background:rgba(20,10,50,0.6); padding:20px; border-radius:15px;
-    border:1px solid #00bfff; text-align:center; transition:0.3s;
-  }
-  .resource-card:hover { transform:translateY(-8px); box-shadow:0 0 40px rgba(0,191,255,0.4); }
-  .resource-card a {
-    color:#00ffff; text-decoration:none; font-size:1.2rem; font-weight:600;
-  }
-  .resource-card p { margin:10px 0 0; color:#aaffff; font-size:0.95rem; }
+:root {
+  --primary-bg: #050018;
+  --secondary-bg: #0f002f;
+  --accent: #00ffea;
+  --highlight: #7c3aed;
+  --text-color: #e0f2ff;
+  --muted-text: #a0d8ff;
+  --card-bg: rgba(15,5,35,0.85);
+  --hover-glow: rgba(0,255,255,0.5);
+  --transition-speed: 0.35s;
+}
+
+body {
+  margin:0; font-family:'Inter',sans-serif;
+  background: radial-gradient(circle at top left, var(--primary-bg), var(--secondary-bg));
+  color: var(--text-color);
+  overflow-x:hidden; min-height:100vh; position:relative;
+}
+body::before {
+  content:'';
+  position:absolute; top:0; left:0; width:100%; height:200%;
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Ccircle cx="50" cy="50" r="1" fill="%2300ffea" opacity="0.6"/%3E%3C/svg%3E') repeat;
+  opacity:0.08; animation: floatParticles 50s linear infinite;
+  pointer-events:none;
+}
+@keyframes floatParticles { 0% { transform: translateY(0); } 100% { transform: translateY(-120px); } }
+
+header {
+  text-align:center; padding:90px 20px 70px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.75));
+  border-bottom:4px solid var(--accent); box-shadow:0 0 100px var(--accent);
+  position:relative; overflow:hidden;
+}
+header::after {
+  content:''; position:absolute; bottom:0; left:0; width:100%; height:35px;
+  background: linear-gradient(to bottom, var(--accent), transparent); opacity:0.6;
+}
+h1 { font-family:'Orbitron',sans-serif; font-size:4rem; color:var(--accent); text-shadow:0 0 35px var(--accent),0 0 70px var(--highlight); margin:0; letter-spacing:4px; }
+.subtitle { font-family:'Exo 2',sans-serif; font-size:1.5rem; margin-top:15px; color:#ccffff; text-shadow:0 0 15px var(--accent); letter-spacing:1px; }
+.tagline { font-size:1.1rem; margin-top:10px; color:#aaffff; opacity:0.9; }
+
+.container { width:95%; max-width:1500px; margin:50px auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:45px; }
+
+section {
+  background: var(--card-bg); border-radius:28px; padding:35px;
+  border:2px solid var(--accent); backdrop-filter:blur(20px);
+  box-shadow:0 0 80px rgba(0,255,255,0.35);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  position:relative; overflow:hidden;
+}
+section::before {
+  content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  opacity:0; transition:opacity 0.6s;
+}
+section:hover::before { opacity:1; }
+section:hover { transform: translateY(-12px) scale(1.03); box-shadow:0 0 120px var(--hover-glow); }
+
+h2 { font-family:'Orbitron',sans-serif; color:var(--accent); text-shadow:0 0 20px var(--accent); margin-top:0; font-size:1.85rem; }
+
+input, button {
+  width:100%; padding:16px; margin-top:14px; border-radius:12px; border:none; font-size:1.1rem;
+  background: rgba(20,20,50,0.9); color:var(--text-color); transition:0.3s;
+}
+input:focus { outline:none; box-shadow:0 0 20px var(--accent); }
+button {
+  background: linear-gradient(to right, var(--accent), #00bfff); font-weight:bold; cursor:pointer;
+  color:#000; text-transform:uppercase; letter-spacing:1px;
+}
+button:hover {
+  background: linear-gradient(to right, #00efff, var(--accent));
+  box-shadow:0 0 35px var(--accent); transform:translateY(-2px);
+}
+
+.results {
+  margin-top:20px; padding:20px; background: rgba(0,255,255,0.08); border-radius:14px;
+  white-space:pre-wrap; min-height:180px; font-family:'Exo 2',sans-serif; position:relative;
+}
+
+.evidence-preview { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+.evidence-preview img {
+  max-width:140px; border-radius:12px; border:1px solid var(--accent);
+  transition: transform 0.4s, box-shadow 0.4s; cursor:pointer;
+}
+.evidence-preview img:hover {
+  transform: scale(1.15) rotate(3deg); box-shadow:0 0 35px var(--accent);
+}
+
+footer {
+  text-align:center; padding:40px; font-size:1rem; color:#ccffff;
+  margin-top:80px; border-top:2px solid var(--accent); background:rgba(0,0,0,0.6);
+}
+
+/* Resources Section */
+.resources { margin-top:60px; padding:40px; background:rgba(10,5,30,0.75); border-radius:25px; border:1px dashed var(--accent); }
+.resources h2 { text-align:center; margin-bottom:30px; }
+.resource-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; }
+.resource-card {
+  background: rgba(20,10,50,0.6); padding:20px; border-radius:15px;
+  border:1px solid #00bfff; text-align:center; transition:0.3s;
+}
+.resource-card:hover { transform:translateY(-8px); box-shadow:0 0 45px rgba(0,191,255,0.45); }
+.resource-card a { color:var(--accent); text-decoration:none; font-size:1.2rem; font-weight:600; }
+.resource-card p { margin:10px 0 0; color:#aaffff; font-size:0.95rem; }
 </style>
 </head>
 <body>
+
 <header>
   <h1>Lady Legalz Neo-Quantum Forensics</h1>
   <div class="subtitle">2026 Innovation Hub • Next-Gen AI Evidence Suite</div>
-  <div class="tagline">Pioneering Quantum-Enhanced Legal Intelligence • Secure • Scalable • Futuristic</div>
+  <div class="tagline">Quantum-Enhanced Legal Intelligence • Secure • Scalable • Futuristic</div>
 </header>
 
 <div class="container">
@@ -174,39 +177,22 @@
   <section class="resources">
     <h2>Future Resources & Innovation Partners</h2>
     <div class="resource-grid">
-      <div class="resource-card">
-        <a href="https://www.ibm.com/quantum" target="_blank">IBM Quantum</a>
-        <p>Leading quantum computing research and cloud access</p>
-      </div>
-      <div class="resource-card">
-        <a href="https://www.nist.gov/quantum" target="_blank">NIST Quantum Initiative</a>
-        <p>Standards and post-quantum cryptography development</p>
-      </div>
-      <div class="resource-card">
-        <a href="https://openai.com" target="_blank">OpenAI Research</a>
-        <p>Advanced AI models powering forensic intelligence</p>
-      </div>
-      <div class="resource-card">
-        <a href="https://chainalysis.com" target="_blank">Chainalysis</a>
-        <p>Premier blockchain investigation and compliance tools</p>
-      </div>
-      <div class="resource-card">
-        <a href="https://www.interpol.int/How-we-work/Forensics" target="_blank">INTERPOL Forensics</a>
-        <p>Global standards in forensic science and innovation</p>
-      </div>
-      <div class="resource-card">
-        <a href="https://arxiv.org" target="_blank">arXiv Research Hub</a>
-        <p>Latest papers on quantum forensics and legal AI</p>
-      </div>
+      <div class="resource-card"><a href="https://www.ibm.com/quantum" target="_blank">IBM Quantum</a><p>Quantum computing cloud & research</p></div>
+      <div class="resource-card"><a href="https://www.nist.gov/quantum" target="_blank">NIST Quantum Initiative</a><p>Standards & post-quantum cryptography</p></div>
+      <div class="resource-card"><a href="https://openai.com" target="_blank">OpenAI Research</a><p>Generative AI powering forensic intelligence</p></div>
+      <div class="resource-card"><a href="https://chainalysis.com" target="_blank">Chainalysis</a><p>Blockchain investigation & compliance tools</p></div>
+      <div class="resource-card"><a href="https://www.interpol.int/How-we-work/Forensics" target="_blank">INTERPOL Forensics</a><p>Global forensic standards & innovation</p></div>
+      <div class="resource-card"><a href="https://arxiv.org" target="_blank">arXiv Research Hub</a><p>Latest papers on quantum forensics & AI</p></div>
     </div>
   </section>
 </div>
 
 <footer>
-  &copy; 2026 Lady Legalz • TUOLAT LABZ • Neo-Quantum Forensics Innovation Demo • Pioneering the Future of Legal Intelligence
+  &copy; 2026 Lady Legalz • TUOLAT LABZ • Neo-Quantum Forensics Innovation Demo
 </footer>
 
 <script>
+// --- Quantum Evidence Mock Analysis & Chart Generation ---
 function mockAnalysis(type) {
   const timestamp = new Date().toLocaleTimeString();
   const base = `*** Lady Legalz Neo-Quantum Forensics 2026 ***\nTimestamp: ${timestamp}\nSystem: Quantum-Enhanced AI Core Active\n\n`;
@@ -228,33 +214,22 @@ function createCharts(containerId) {
   canvas.id = ctxId;
   document.getElementById(containerId).appendChild(canvas);
 
-  const labels = ['Confidence', 'Accuracy', 'Quantum Boost', 'Risk Factor'];
-  const dataValues = labels.map(() => Math.random() * 100);
+  const labels = ['Confidence','Accuracy','Quantum Boost','Risk Factor'];
+  const dataValues = labels.map(() => Math.random()*100);
 
   new Chart(canvas, {
-    type: 'radar',
-    data: {
-      labels: labels,
-      datasets: [{
-        label: 'Quantum Forensic Score',
-        data: dataValues,
-        backgroundColor: 'rgba(0,255,255,0.2)',
-        borderColor: '#00ffff',
-        pointBackgroundColor: '#00ffff',
-        pointBorderColor: '#fff',
-        borderWidth: 2
-      }]
-    },
+    type:'radar',
+    data: { labels, datasets:[{ label:'Quantum Forensic Score', data:dataValues, backgroundColor:'rgba(0,255,255,0.2)', borderColor:'#00ffff', pointBackgroundColor:'#00ffff', pointBorderColor:'#fff', borderWidth:2 }] },
     options: {
-      responsive: true,
-      plugins: { legend: { display: false } },
-      scales: {
-        r: {
-          angleLines: { color: '#00ffff' },
-          grid: { color: '#00ffff44' },
-          pointLabels: { color: '#ccffff' },
-          ticks: { color: '#aaffff', backdropColor: 'transparent' },
-          max: 100
+      responsive:true,
+      plugins:{ legend:{ display:false } },
+      scales:{
+        r:{
+          angleLines:{ color:'#00ffff' },
+          grid:{ color:'#00ffff44' },
+          pointLabels:{ color:'#ccffff' },
+          ticks:{ color:'#aaffff', backdropColor:'transparent' },
+          max:100
         }
       }
     }
@@ -262,31 +237,24 @@ function createCharts(containerId) {
 }
 
 function analyzeEvidence(type) {
-  const containerMap = { 
-    facial: 'face-results', fingerprint: 'finger-results', 
-    crypto: 'crypto-results', dna: 'dna-results',
-    voice: 'voice-results', social: 'social-results'
-  };
+  const containerMap = { facial:'face-results', fingerprint:'finger-results', crypto:'crypto-results', dna:'dna-results', voice:'voice-results', social:'social-results' };
   const container = document.getElementById(containerMap[type]);
-  const inputId = type === 'crypto' || type === 'social' ? `${type}-input` : `${type === 'voice' ? 'voice' : type}-input`;
+  const inputId = type === 'crypto' || type === 'social' ? `${type}-input` : `${type}-input`;
 
   container.innerHTML = '<pre>Quantum core initializing...\nScanning evidence...\nApplying neural enhancements...</pre>';
 
-  setTimeout(() => {
+  setTimeout(()=>{
     container.innerHTML = `<pre>${mockAnalysis(type)}</pre>`;
     
-    if (type !== 'crypto' && type !== 'social') {
+    if(type!=='crypto' && type!=='social'){
       const inputFiles = document.getElementById(inputId).files;
-      if (inputFiles.length > 0) {
-        const preview = document.createElement('div');
-        preview.className = 'evidence-preview';
-        Array.from(inputFiles).forEach(file => {
+      if(inputFiles.length>0){
+        const preview = document.createElement('div'); preview.className='evidence-preview';
+        Array.from(inputFiles).forEach(file=>{
           const reader = new FileReader();
-          reader.onload = e => {
-            if (file.type.startsWith('image/')) {
-              const img = document.createElement('img');
-              img.src = e.target.result;
-              preview.appendChild(img);
+          reader.onload = e=>{
+            if(file.type.startsWith('image/')){
+              const img = document.createElement('img'); img.src = e.target.result; preview.appendChild(img);
             }
           };
           reader.readAsDataURL(file);
@@ -294,10 +262,11 @@ function analyzeEvidence(type) {
         container.appendChild(preview);
       }
     }
-    
     createCharts(containerMap[type]);
-  }, 1200 + Math.random() * 1200);
+  }, 1200+Math.random()*1200);
 }
 </script>
+
 </body>
 </html>
+
